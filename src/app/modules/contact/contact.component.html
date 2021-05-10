@@ -1,0 +1,115 @@
+<div class="background">
+  <div>
+    <mat-grid-list cols="5" rowHeight="450px" >
+
+      <!--    LEFT SIDE-->
+
+      <mat-grid-tile class="tile_background"
+        *ngFor="let contactUs of contactUsLeft"
+        [colspan]="contactUs.cols"
+        [rowspan]="contactUs.rows"
+        [style.background]="contactUs.fieldColor">
+        <ul>
+          <li>
+            <a mat-button >
+              <mat-icon>home</mat-icon>
+              Str. Grigore Erofte, no.1/B, Oradea, Bihor
+            </a>
+          </li>
+
+          <li>
+            <a mat-button >
+              <mat-icon>phone_in_talk</mat-icon>
+              0721 323790
+            </a>
+          </li>
+
+          <li>
+            <a mat-button >
+              <mat-icon>contact_mail</mat-icon>
+              artofbuiding@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <mat-grid-tile-header>
+          <!--        [style.background]="project.headerColor">-->
+          CONTACTS:</mat-grid-tile-header>
+        <!--      <img [src]=siteReports_image>-->
+      </mat-grid-tile>
+
+      <!--    RIGHT SIDE-->
+
+      <mat-grid-tile class="tile_background"
+        *ngFor="let contactUs of contactUsRight"
+        [colspan]="contactUs.cols"
+        [rowspan]="contactUs.rows"
+        [style.background]="contactUs.fieldColor">
+
+        <!--      INSERT CONTACT US FORM-->
+        <!--      ______________________________-->
+        <div class="container col-lg-12" id="background_container">
+          <h1 class="text-center">Contact form</h1>
+          <div class="card">
+            <div class="card-body">
+              <form  #contactForm = "ngForm" (ngSubmit)="sendContactMessage()">
+                <small class="text-danger">{{errorMessage}}</small>
+                <div class="form-group">
+
+                  <label for="name"></label>
+                  <input type="text" class="form-control"
+                         [(ngModel)]="name"
+                         id="name"
+                         placeholder="User Name*"
+                         name="name"
+                         required #usrname="ngModel" [class.is-invalid]="usrname.invalid && usrname.touched">
+                </div>
+                <small class="text-danger" [class.d-none]="usrname.valid || usrname.untouched">
+                  {{nameAlert}}
+                </small>
+
+                <div class="form-group">
+                  <label for="email"></label>
+                  <input type="email" class="form-control"
+                         [(ngModel)]="email"
+                         id="email"
+                         placeholder="Email address*"
+                         name="email"
+                         email="true"
+                         required #mail="ngModel" [class.is-invalid]="mail.invalid && mail.touched">
+                </div>
+                <small class="text-danger" [class.d-none]="mail.valid || mail.untouched">
+                  {{emailAlert}}
+                </small>
+
+                <div class="form-group">
+                  <!--          TODO: make it textarea!!!!-->
+                  <label for="message"></label>
+                  <input type="text" class="form-control"
+                         [(ngModel)]="message"
+                         id="message"
+                         placeholder="Contact message*"
+                         name="message"
+                         required #mess="ngModel" [class.is-invalid]="mess.invalid && mess.touched">
+                </div>
+                <small class="text-danger" [class.d-none]="mess.valid || mess.untouched">
+                  {{messageAlert}}
+                </small>
+
+                <div>
+                  <button [disabled]="contactForm.form.invalid"  type="submit" class="btn btn-success">Send message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!--      END CONTACT US FORM-->
+
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+
+

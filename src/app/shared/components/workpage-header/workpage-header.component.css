@@ -1,0 +1,12 @@
+.spacer{
+  flex: 1 1 auto;
+}
+
+.header_color{
+  background: transparent\5;
+  background:rgba(232, 236, 241, 1);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+  zoom: 1;
+  color: #5e5e5e;
+  box-shadow: 5px 5px 8px #5e5e5e;
+}

@@ -1,0 +1,63 @@
+<h1 class="text-center">Edit subtask status</h1>
+<div class="card">
+  <div class="card-body">
+    <form class="form-group">
+
+      <div class="form-group">
+        <label for="name">Subtask name :</label>
+        <input type="text" class="form-control"
+               id="name"
+               [value]="subtask.name"
+               [(ngModel)]="subtask.name"
+               placeholder="Enter subtask name"
+               name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="weight">Weight :</label>
+        <input type="text" class="form-control"
+               id="weight"
+               [value]="subtask.weight"
+               [(ngModel)]="subtask.weight"
+               placeholder="Enter weight"
+               name="weight">
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">Start date :</label>
+        <input type="text" class="form-control"
+               id="startDate"
+               [value]="subtask.startDate"
+               [(ngModel)]="subtask.startDate"
+               placeholder="Enter startDate"
+               name="startDate">
+      </div>
+
+      <div class="form-group">
+        <label for="targetDate">Target date :</label>
+        <input type="text" class="form-control"
+               id="targetDate"
+               [value]="subtask.targetDate"
+               [(ngModel)]="subtask.targetDate"
+               placeholder="Enter targetDate"
+               name="targetDate">
+      </div>
+
+<!--      <div class="form-group">-->
+<!--        <label for="subtask-status">Subtask status</label>-->
+<!--        <select class="form-control" id="subtask-status"-->
+<!--                name="subtask-status"-->
+<!--                required [(ngModel)]="subtask.status">-->
+<!--          <option *ngFor="let status of subtaskStatus" [ngValue]="status">{{status}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+
+      <mat-dialog-actions>
+        <button mat-button class="mat-button mat-raised-button" (click)="close()">Close</button>
+        <button type="submit" class="btn btn-info" (click)="editSubtask()">Edit subtask</button>
+      </mat-dialog-actions>
+
+    </form>
+  </div>
+</div>
+

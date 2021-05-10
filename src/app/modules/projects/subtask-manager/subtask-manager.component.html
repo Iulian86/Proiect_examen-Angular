@@ -1,0 +1,89 @@
+<div class="container" fxLayout="column" fxLayoutGap="16px" fxFlex="90%">
+  <div>
+    <mat-card class="manage-subtasks-card">
+      <mat-card-header>
+        <div class="col-md-8">
+          <mat-card-title>Manage subtasks</mat-card-title>
+        </div>
+        <div class="col-md-4">
+          <a mat-raised-button color="accent" (click)="navigateToSubtasksList()">
+            <mat-icon>reply</mat-icon>
+            Back to subtasks list
+          </a>
+        </div>
+      </mat-card-header>
+
+      <div class="container" fxLayout="row">
+        <div class="col-md-4">
+          <mat-card>
+            <mat-card-header>
+              <img [src]=todo_logo mat-card-avatar>
+              <mat-card-title>TO DO</mat-card-title>
+<!--              <mat-card-subtitle> Location : {{project.name}}</mat-card-subtitle>-->
+            </mat-card-header>
+            <mat-card-content>
+              <div
+                cdkDropList
+                #todoList="cdkDropList"
+                id="todo_container"
+                [cdkDropListData]="todoDto"
+                [cdkDropListConnectedTo]="[inProgressList]"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box-to-do" *ngFor="let item of todoDto" cdkDrag>{{item.name}}</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col-md-4">
+          <mat-card>
+            <mat-card-header>
+              <img [src]=in_progress_logo mat-card-avatar>
+              <mat-card-title>IN PROGRESS</mat-card-title>
+              <!--              <mat-card-subtitle> Location : {{project.name}}</mat-card-subtitle>-->
+            </mat-card-header>
+            <mat-card-content>
+              <div
+                cdkDropList
+                #inProgressList="cdkDropList"
+                id="in_progress_container"
+                [cdkDropListData]="inProgressDto"
+                [cdkDropListConnectedTo]="[todoList, doneList]"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box-in-progress" *ngFor="let item of inProgressDto" cdkDrag>{{item.name}}</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col-md-4">
+          <mat-card>
+            <mat-card-header>
+              <img [src]=done_logo mat-card-avatar>
+              <mat-card-title>DONE</mat-card-title>
+              <!--              <mat-card-subtitle> Location : {{project.name}}</mat-card-subtitle>-->
+            </mat-card-header>
+            <mat-card-content>
+              <div
+                cdkDropList
+                id="done_container"
+                #doneList="cdkDropList"
+                [cdkDropListData]="doneDto"
+                [cdkDropListConnectedTo]="[todoList, inProgressList]"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box-done" *ngFor="let item of doneDto" cdkDrag>{{item.name}}</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+
+

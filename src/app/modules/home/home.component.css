@@ -1,0 +1,24 @@
+@keyframes alertAnim {
+    from {
+        opacity:0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+.home_bg_img{
+    background-image: url(src/assets/home-img/background4.1.jpg);
+     /* Full height */
+      height: 100%;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: 2s alertAnim forwards;
+}
+
+
+

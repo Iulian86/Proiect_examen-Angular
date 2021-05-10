@@ -1,0 +1,167 @@
+<!--<div style="text-align: center;">-->
+<!--&lt;!&ndash;    <h1>{{registrationMessage}}</h1>&ndash;&gt;-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--&lt;!&ndash;    (ngSubmit)="addPost(rForm.value)&ndash;&gt;-->
+<!--      <form [formGroup]="rForm" >-->
+<!--        <div class="form-container">-->
+<!--          <div class="row columns">-->
+
+<!--            <h1>Sign up</h1>-->
+<!--            <hr>-->
+
+<!--            <div class="form-group">-->
+<!--              <label for="username">-->
+<!--                <input type="text"-->
+<!--                       class="form-control"-->
+<!--                       id="username"-->
+<!--                       [(ngModel)]="user.username"-->
+<!--                       formControlName="username"-->
+<!--                       placeholder="User name*"-->
+<!--                       name="username">-->
+<!--              </label>-->
+<!--            </div>-->
+<!--            <div class="alert" *ngIf="!rForm.controls['username'].valid && rForm.controls['username'].touched">-->
+<!--              {{ usernameAlert }}-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash;TODO: create a validation email&ndash;&gt;-->
+<!--            <div class="form-group">-->
+<!--              <label for="email">-->
+<!--                <input type="text"-->
+<!--                       class="form-control"-->
+<!--                       id="email"-->
+<!--                       [(ngModel)]="user.email"-->
+<!--                       formControlName="email"-->
+<!--                       email="true"-->
+<!--                       placeholder="User email*"-->
+<!--                       name="email">-->
+<!--              </label>-->
+<!--            </div>-->
+<!--            <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">-->
+<!--              {{ emailAlert }}-->
+<!--            </div>-->
+
+<!--&lt;!&ndash;            TODO: create a validation email&ndash;&gt;-->
+
+<!--            <div class="form-group">-->
+<!--              <label for="userRole">User role-->
+<!--                <select class="form-control"-->
+<!--                        id="userRole"-->
+<!--                        [(ngModel)]="user.userType"-->
+<!--                        formControlName="userRole"-->
+<!--                        name="userRole">-->
+<!--                  <option *ngFor="let userRole of userTypes" [value]="userRole">-->
+<!--                    {{userRole}}-->
+<!--                  </option>-->
+<!--                </select>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--            <div class="alert" *ngIf="!rForm.controls['userRole'].valid && rForm.controls['userRole'].touched">-->
+<!--              {{ userRoleAlert }}-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--              <label for="password">-->
+<!--                <input type="text"-->
+<!--                       class="form-control"-->
+<!--                       id="password"-->
+<!--                       [(ngModel)]="user.password"-->
+<!--                       formControlName="password"-->
+<!--                       placeholder="Access password*"-->
+<!--                        name="password">-->
+<!--              </label>-->
+<!--            </div>-->
+<!--            <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">-->
+<!--              {{ passwordAlert }}-->
+<!--            </div>-->
+
+<!--            <a >-->
+<!--&lt;!&ndash;              routerLink="/signin"&ndash;&gt;-->
+<!--              <input type="submit" class="button expanded" value="Sign up" [disabled]="!rForm.valid"  (click)="registerNow()" >-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+
+
+<!--    <ng-template #forminfo>-->
+<!--      <div class="form-container">-->
+<!--        <div class="row columns">-->
+<!--            <h2>{{ projectName }}</h2>-->
+<!--            <p>{{ userName }}</p>-->
+<!--            <p>{{ userRoles.name }}</p>-->
+<!--            <p>{{ companyName }}</p>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </ng-template>-->
+
+<div class="background">
+  <div class="container col-lg-6">
+    <h1 class="text-center">Sign up</h1>
+    <div class="card">
+      <div class="card-body">
+        <form #signUpForm = "ngForm" (ngSubmit)="registerNow()">
+          <div class="form-group">
+            <label for="username"></label>
+            <input type="text" class="form-control"
+                   id="username"
+                   [(ngModel)]="user.username"
+                   placeholder="User Name*"
+                   name="username"
+                   required #username="ngModel" [class.is-invalid]="username.invalid && username.touched">
+          </div>
+          <small class="text-danger" [class.d-none]="username.valid || username.untouched">
+            {{usernameAlert}}
+          </small>
+
+          <div class="form-group">
+            <label for="password"></label>
+            <input type="password"
+                   class="form-control"
+                   [(ngModel)]="user.password"
+                   id="password"
+                   placeholder="Password*"
+                   name="password"
+                   required #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
+          </div>
+          <small class="text-danger" [class.d-none]="password.valid || password.untouched">
+            {{passwordAlert}}
+          </small>
+
+          <div class="form-group">
+            <label for="email"></label>
+            <input type="text" class="form-control"
+                   [(ngModel)]="user.email"
+                   id="email"
+                   placeholder="Email*"
+                   name="email"
+                   email="true"
+                   required #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+          </div>
+          <small class="text-danger" [class.d-none]="email.valid || email.untouched">
+            {{emailAlert}}
+          </small>
+
+          <div class="form-group">
+            <label for="userType">User role:</label>
+            <select class="form-control" id="userType" name="userType" required [(ngModel)]="user.userType"
+                    required #userType="ngModel" [class.is-invalid]="userType.invalid && userType.touched">
+              <option *ngFor="let userType of userTypes" [ngValue]="userType">{{userType}}</option>
+            </select>
+          </div>
+          <small class="text-danger" [class.d-none]="userType.valid || userType.untouched">
+            {{userRoleAlert}}
+          </small>
+          <div>
+            <button [disabled]="signUpForm.form.invalid" type="submit" class="btn btn-info ">Sign up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

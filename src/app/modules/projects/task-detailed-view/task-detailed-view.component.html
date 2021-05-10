@@ -1,0 +1,58 @@
+<div class="container" fxLayout="column" fxLayoutGap="16px" fxFlex="90%">
+
+  <div>
+    <mat-card class="task-details-card">
+      <mat-card-header>
+        <mat-card-title>Task details</mat-card-title>
+      </mat-card-header>
+      <div>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title> Name: {{task.name}}</mat-card-title>
+<!--            <mat-card-subtitle> Location : {{project.name}}</mat-card-subtitle>-->
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-4">
+                <div> Start date : {{task.startDate}}</div>
+              </div>
+              <div class="col-md-4">
+                <div> Finish date : {{task.endDate}}</div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
+
+  <div>
+    <app-subtask-list></app-subtask-list>
+  </div>
+
+</div>
+
+
+
+
+<!--<div class="container mt-1">-->
+<!--  <div class="panel">-->
+<!--    <div class="panel-heading">-->
+<!--      <h2> Task details </h2>-->
+<!--    </div>-->
+<!--    <div class="panel-body">-->
+<!--      <div class="row">-->
+<!--        <div class="col-lg-6">-->
+<!--          <div> Task Name : {{task.name}}</div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-6">-->
+<!--          <div>Start date : {{task.startDate}}</div>-->
+<!--          <div>Finish date : {{task.endDate}}</div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-12">-->
+<!--          <app-subtask-list></app-subtask-list>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

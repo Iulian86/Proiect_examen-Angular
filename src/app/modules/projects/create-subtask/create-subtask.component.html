@@ -1,0 +1,81 @@
+    <div class="col-lg-12">
+      <h1 class="text-center">Create subtask</h1>
+      <div class="card">
+        <div class="card-body">
+          <form class="form-group">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="name">Subtask name :</label>
+                  <input type="text" class="form-control"
+                         id="name"
+                         [(ngModel)]="subtaskDtoRequest.name"
+                         placeholder="Subtask name"
+                         name="name">
+                </div>
+                <div class="form-group">
+                  <label for="startDate">Start date (yyyy-mm-dd):</label>
+                  <input type="text" class="form-control"
+                         id="startDate"
+                         [(ngModel)]="subtaskDtoRequest.startDate"
+                         placeholder="Start date"
+                         name="startDate">
+                </div>
+
+                <div class="form-group">
+                  <label for="targetDate">Final date (yyyy-mm-dd):</label>
+                  <input type="text" class="form-control"
+                         id="targetDate"
+                         [(ngModel)]="subtaskDtoRequest.targetDate"
+                         placeholder="Final date"
+                         name="targetDate">
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label for="weight">Weight :</label>
+                  <input type="number" class="form-control"
+                         id="weight"
+                         [(ngModel)]="subtaskDtoRequest.weight"
+                         placeholder="Enter story weight"
+                         name="weight">
+                </div>
+<!--                <div class="form-group">-->
+<!--                  <label for="statusPercentage">Status percentage :</label>-->
+<!--                  <input type="number" class="form-control"-->
+<!--                         id="statusPercentage"-->
+<!--                         [(ngModel)]="subtaskDtoRequest.statusPercentage"-->
+<!--                         placeholder="Status percentage"-->
+<!--                         name="statusPercentage">-->
+<!--                </div>-->
+                <div class="form-group">
+                  <label for="subtask-status">Subtask status</label>
+                  <select class="form-control" id="subtask-status"
+                          name="subtask-status"
+                          required [(ngModel)]="subtaskDtoRequest.status">
+                    <option *ngFor="let status of subtaskStatus" [ngValue]="status">{{status}}</option>
+                  </select>
+                </div>
+<!--                <div class="form-group">-->
+<!--                  <label for="task">Select task</label>-->
+<!--                  <select class="form-control" id="task"-->
+<!--                          name="task"-->
+<!--                          required="required"-->
+<!--                          [(ngModel)]="subtaskDtoRequest.projectTaskId">-->
+<!--                    <option *ngFor="let task of taskList | async" [ngValue]="task.id">{{task.name}}</option>-->
+<!--                  </select>-->
+<!--                </div>-->
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-info" (click)="saveProjectSubtask()">Save subtask</button>
+              <button type="submit" class="btn btn-info ml-4" (click)="navigateToSubtasksList()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+

@@ -1,0 +1,134 @@
+
+<div class="container" fxLayout="column" fxLayoutGap="16px" fxFlex="90%">
+
+  <div>
+    <mat-card class="subtask-details-card">
+      <mat-card-header>
+        <mat-card-title>Subtasks details</mat-card-title>
+      </mat-card-header>
+      <div>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title> Name: {{subtask.name}}</mat-card-title>
+<!--            <mat-card-subtitle> Location : {{project.name}}</mat-card-subtitle>-->
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-4">
+                <div> Start date : {{subtask.startDate}}</div>
+                <div> Finish date : {{subtask.targetDate}}</div>
+              </div>
+              <div class="col-md-4">
+                <div> Status : {{subtask.status}}</div>
+                <div> Weight : {{subtask.weight}}</div>
+              </div>
+              <div class="col-md-4">
+                <a mat-raised-button color="accent" (click)="navigateToSubtasksList()">
+                  <mat-icon>reply</mat-icon>
+                  Back to subtasks list
+                </a>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
+
+
+  <div>
+    <mat-card class="assigned-users-card">
+      <mat-card-header>
+        <mat-card-title>Assigned users</mat-card-title>
+      </mat-card-header>
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let user of subtask.assignedUsers">
+          <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+              <img [src]=user_logo mat-card-avatar>
+              <mat-card-title>
+                <h2>{{user.name}}</h2>
+              </mat-card-title>
+              <mat-card-subtitle>
+                <p class="m-0">{{user.roles[0]}}</p>
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"></li>
+                <li class="list-group-item">
+                  <mat-icon>contact_mail</mat-icon>
+                  {{user.emailAddress}}</li>
+<!--                <li class="list-group-item">-->
+<!--                  <mat-icon>contact_phone</mat-icon>-->
+<!--                  {{user.emailAddress}}</li>-->
+                <li class="list-group-item">
+                  <a mat-stroked-button color="warn" (click)="deleteFromProject(subtask.id)">
+                    <mat-icon>delete_outline</mat-icon>
+                    Delete from project
+                  </a>
+                </li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card  class="search-user-card">
+      <mat-card-header>
+        <mat-card-title>Search by email address and invite users</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="form-group">
+          <input type="text" (keyup)="findUserByEmail($event)"
+                 class="form-control mt-5"
+                 placeholder="Search users by email">
+        </form>
+        <div *ngIf="user">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title">User name: {{user.username}}</h4>
+              <p class="card-text">Email: {{user.email}}</p>
+<!--              <button class="btn btn-sm btn-info" color="primary" (click)="inviteUser(user.username)"> Invite user </button>-->
+              <a mat-stroked-button color="primary" (click)="inviteUser(user.username)">
+                <mat-icon>highlight_alt</mat-icon>
+                Invite user
+              </a>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!--<div class="container mt-1">-->
+<!--  <div class="panel">-->
+<!--    <div class="panel-heading">-->
+<!--      <h2> Subtask details </h2>-->
+<!--    </div>-->
+<!--    <div class="panel-body">-->
+<!--      <div class="row">-->
+<!--        <div class="col-lg-6">-->
+<!--          <div> Name : {{subtask.name}}</div>-->
+<!--          <div> Status : {{subtask.status}}</div>-->
+<!--          <div> Weight : {{subtask.weight}}</div>-->
+<!--        </div>-->
+<!--        <div class="col-lg-6">-->
+<!--          <div>Start date : {{subtask.startDate}}</div>-->
+<!--          <div>Finish date : {{subtask.targetDate}}</div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

@@ -1,0 +1,192 @@
+
+<div>
+  <mat-grid-list cols="5" rowHeight="400px" >
+    <mat-grid-tile style="text-align: left"
+      *ngFor="let project of projectsLeft"
+      [colspan]="project.cols"
+      [rowspan]="project.rows"
+      [style.background]="project.fieldColor">
+      <ul>
+        <h2>ADD NEW TASKS</h2>
+        <li>Add new task containing: name, start date, end date. </li>
+        <h2>ADD NEW SUBTASKS</h2>
+        <li>Add subtasks for every main tasks containing: name, status, weight, start date, end date.</li>
+        <h2>MANAGE SUBTASKS</h2>
+        <li>Update status for every subtask in a drag-and-drop list.</li>
+        <h2>PROJECT DETAILS</h2>
+        <li>Contains details for avery project about: name, location, administrator, registration day.</li>
+        <li>Already logged users can be assigned by searching for user emails.
+          The entire list of assigned users can be seen in this window</li>
+      </ul>
+<!--      {{project.text}}-->
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        PROJECT TASKS AND DETAILS</mat-grid-tile-header>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      *ngFor="let project of projectsRight"
+      [colspan]="project.cols"
+      [rowspan]="project.rows"
+      [style.background]="project.fieldColor">
+      <mat-grid-tile-header>
+<!--        [style.background]="project.headerColor">-->
+        PROJECT TASKS AND DETAILS</mat-grid-tile-header>
+      <img [src]=projectTask_image>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
+<div>
+  <mat-grid-list cols="5" rowHeight="650px" >
+    <mat-grid-tile
+      *ngFor="let raidLog of raidLogLeft"
+      [colspan]="raidLog.cols"
+      [rowspan]="raidLog.rows"
+      [style.background]="raidLog.fieldColor">
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        R.A.I.D. LOG</mat-grid-tile-header>
+      <img [src]=raidLog_image>
+    </mat-grid-tile>
+
+    <mat-grid-tile style="text-align: left"
+      *ngFor="let raidLog of raidLogRight"
+      [colspan]="raidLog.cols"
+      [rowspan]="raidLog.rows"
+      [style.background]="raidLog.fieldColor">
+      <ul>
+        <h2>RISKS</h2>
+        <li>Are events that will adversely affect the project if they eventuate.
+          Evaluate their importance based on the likelihood they will occur, along with the impact on the project if they do.</li>
+        <li>Ask: What events might occur they will have a negative impact?</li>
+        <li>Actions: Implement risk mitigation strategies based on the critically of each risk.</li>
+        <h2>ASSUMPTIONS</h2>
+        <li>Are aspects of the project that you assume will be in place to help the project run but can not be guaranteed.
+          If they are proved wrong, there will be an impact on the project.</li>
+        <li>Ask: What exists, or do we presume to be true, that will be an impact on the project?</li>
+        <li>Actions: Reassess assumptions at regular intervals to ensure they are still valid.</li>
+        <h2>ISSUES</h2>
+        <li>Are events that have an adverse impact on the project.
+          They are risks that have eventuated, and you must manage ASAP to keep the project on track.</li>
+        <li>Ask: What must we deal with to make the project run to plan?</li>
+        <li>Actions: Contain or remove the issues.</li>
+        <h2>DEPENDENCIES</h2>
+        <li>Are activities which need to start or be completed so the project can progress and succeed.
+          Dependencies may rely on internal or external events, suppliers, or partners.</li>
+        <li>Ask: Who or what are we dependent on and who depends on us?</li>
+        <li>Actions: Monitor and manage dependencies.</li>
+      </ul>
+<!--      {{raidLog.text}}-->
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        R.A.I.D. LOG</mat-grid-tile-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div>
+  <mat-grid-list cols="5" rowHeight="260px" >
+    <mat-grid-tile
+      *ngFor="let boq of boqLeft"
+      [colspan]="boq.cols"
+      [rowspan]="boq.rows"
+      [style.background]="boq.fieldColor">
+      <ul>
+        <h2>Contains all the working chapters with the following details:</h2>
+        <li>ITEM DESCRIPTION: Description of every item, chapter, subchapter and works list. This same structure will be
+          later used in site reports.</li>
+        <li>MEASUREMENT UNIT: Measurement units for every type of work.</li>
+        <li>QUANTITY: Quantities for every type of work.</li>
+        <li>COST/MEASUREMENT UNIT: Costs per measurement unit for every type of work.</li>
+        <li>TOTAL COST: Total cost for every type of work.</li>
+      </ul>
+<!--      {{boq.text}}-->
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        BILL OF QUANTITIES</mat-grid-tile-header>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      *ngFor="let boq of boqRight"
+      [colspan]="boq.cols"
+      [rowspan]="boq.rows"
+      [style.background]="boq.fieldColor">
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        BILL OF QUANTITIES</mat-grid-tile-header>
+      <img [src]=boq_image>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
+<div>
+  <mat-grid-list cols="5" rowHeight="250px" >
+    <mat-grid-tile
+      *ngFor="let siteReport of siteReportsLeft"
+      [colspan]="siteReport.cols"
+      [rowspan]="siteReport.rows"
+      [style.background]="siteReport.fieldColor">
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        SITE REPORTS</mat-grid-tile-header>
+      <img [src]=siteReports_image>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      *ngFor="let siteReport of siteReportsRight"
+      [colspan]="siteReport.cols"
+      [rowspan]="siteReport.rows"
+      [style.background]="siteReport.fieldColor">
+      <ul>
+<!--        <h2>Contains all the working chapters with the following details:</h2>-->
+        <li>Are standardised reports for every type of the construction works made every day, including quantities done in
+          that specific day</li>
+        <li>It follows the same list of works first implemented into the bill of quantities list.</li>
+        <li>It helps track the working progress for every article, by every day.</li>
+        <li>It helps optimizing and schedule the manpower for every work.</li>
+        <li>It is structured on the basis of local standardised working forms.</li>
+      </ul>
+<!--      {{siteReport.text}}-->
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        SITE REPORTS</mat-grid-tile-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
+<div>
+  <mat-grid-list cols="5" rowHeight="200px" >
+    <mat-grid-tile
+      *ngFor="let boq of boqLeft"
+      [colspan]="boq.cols"
+      [rowspan]="boq.rows"
+      [style.background]="boq.fieldColor">
+      <ul>
+        <!--        <h2>Contains all the working chapters with the following details:</h2>-->
+        <li>Are specific reports containing general information, made once a week, in order to generally inform the owner about
+        overall progress of the project.</li>
+        <li>It can contain information regarding time schedule, problems that needs to be solved, design issues and proposals, etc.</li>
+        <li>It's not a standardized report, it is more like a general informed report.</li>
+      </ul>
+<!--      {{boq.text}}-->
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        GENERAL REPORTS</mat-grid-tile-header>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      *ngFor="let boq of boqRight"
+      [colspan]="boq.cols"
+      [rowspan]="boq.rows"
+      [style.background]="boq.fieldColor">
+      <mat-grid-tile-header>
+        <!--        [style.background]="project.headerColor">-->
+        GENERAL REPORTS</mat-grid-tile-header>
+      <img [src]=generalReports_image>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

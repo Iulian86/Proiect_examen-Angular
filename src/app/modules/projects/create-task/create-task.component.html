@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h1 class="text-center">Create task</h1>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-group">
+          <div class="form-group">
+            <label for="taskName">Task name :</label>
+            <input type="text" class="form-control"
+                   id="taskName"
+                   [(ngModel)]="taskDtoRequest.name"
+                   placeholder="Task name"
+                   name="taskName">
+          </div>
+          <div class="form-group">
+            <label for="startDate">Start date (yyyy-mm-dd):</label>
+            <input type="text" class="form-control"
+                   id="startDate"
+                   [(ngModel)]="taskDtoRequest.startDate"
+                   placeholder="Start date"
+                   name="startDate">
+          </div>
+          <div class="form-group">
+            <label for="endDate">Final date (yyyy-mm-dd):</label>
+            <input type="text"
+                   class="form-control"
+                   [(ngModel)]="taskDtoRequest.endDate"
+                   id="endDate"
+                   placeholder="Final date"
+                   name="endDate">
+          </div>
+<!--          <div class="form-group">-->
+<!--            <label for="subtasks">Subtask ids:</label>-->
+<!--            <input type="number"-->
+<!--                   class="form-control"-->
+<!--                   [(ngModel)]="task.subtasksIds"-->
+<!--                   id="subtasks"-->
+<!--                   placeholder="subtasks"-->
+<!--                   name="subtasks"-->
+<!--                   value="{{selectedSubtasks}}"-->
+<!--                   disabled>-->
+<!--          </div>-->
+          <div>
+            <button type="submit" class="btn btn-info" (click)="saveProjectTask()">Save task</button>
+            <button type="submit" class="btn btn-info ml-4" (click)="navigateToTasksList()">Cancel</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+<!--  <div class="col-lg-6">-->
+<!--    <form class="form-group">-->
+<!--      <input type="text" (keyup)="searchProjectSubtasksByName($event)"-->
+<!--             class="form-control mt-5"-->
+<!--             placeholder="Search  stories by name">-->
+<!--    </form>-->
+<!--    <div class="panel-body">-->
+<!--      <table class="table table-striped">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--          <th>-->
+<!--            Id-->
+<!--          </th>-->
+<!--          <th>-->
+<!--            Name-->
+<!--          </th>-->
+<!--          <th>-->
+<!--            Status percentage-->
+<!--          </th>-->
+<!--          <th>-->
+<!--            Action-->
+<!--          </th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr *ngFor="let subtask of subtasks | async">-->
+<!--          <td>-->
+<!--            {{subtask.id}}-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            {{subtask.name}}-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            {{subtask.statusPercentage}}-->
+<!--          </td>-->
+<!--          <td *ngIf="!selectedSubtasks.includes(subtask.id); else remove_story">-->
+<!--            <button-->
+<!--              type="submit"-->
+<!--              class="btn btn-success btn-sm"-->
+<!--              (click)="assignSubtask(subtask.id)">Assign story</button>-->
+<!--          </td>-->
+<!--          <ng-template #remove_story>-->
+<!--            <td>-->
+<!--              <button-->
+<!--                type="submit"-->
+<!--                class="btn btn-danger btn-sm"-->
+<!--                (click)="removeSubtask(subtask.id)">-->
+<!--                Remove Story-->
+<!--              </button>-->
+<!--            </td>-->
+<!--          </ng-template>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+

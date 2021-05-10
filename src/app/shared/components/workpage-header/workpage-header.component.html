@@ -1,0 +1,23 @@
+<mat-toolbar  class="header_color"  >
+
+    <span>
+        <img [src] = logo>
+      <!--        <img [src] = logoTitle>-->
+    </span>
+    <div class="spacer"></div>
+
+    <a mat-button [routerLink]="['/workPage/projects/project-list']">
+      <mat-icon>library_books</mat-icon>
+      PROJECTS
+    </a>
+
+    <a mat-button [routerLink]="['/workPage/projects/project-create']">
+      <mat-icon>library_books</mat-icon>
+      CREATE PROJECT
+    </a>
+
+    <a mat-stroked-button color="primary" routerLink="" (click)="signOut()">
+        <mat-icon>person</mat-icon>
+        SIGN OUT
+    </a>
+</mat-toolbar>

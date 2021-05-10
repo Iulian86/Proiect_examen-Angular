@@ -1,0 +1,81 @@
+<!--<div >-->
+<!--      <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">-->
+<!--        <div class="form-container">-->
+<!--          <div class="row columns">-->
+
+<!--            <h1>Sign in</h1>-->
+<!--            <hr>-->
+
+<!--            <label for="username">-->
+<!--                &lt;!&ndash; to add [(ngModel)]="user.userName" &ndash;&gt;-->
+<!--              <input type="text" formControlName="username" class="form-control" placeholder="User name*"-->
+<!--                     id="userName" [(ngModel)]="username" name="username">-->
+<!--            </label>-->
+<!--            <div class="alert" *ngIf="!rForm.controls['username'].valid && rForm.controls['username'].touched">-->
+<!--              {{ usernameAlert }}-->
+<!--            </div>-->
+
+<!--            <label for="password" >-->
+<!--                &lt;!&ndash; to add [(ngModel)]="user.accessPassword" &ndash;&gt;-->
+<!--              <input type="password"  formControlName="password" class="form-control" placeholder="Access password*"-->
+<!--                      id="password" [(ngModel)]="password" name="password">-->
+<!--            </label>-->
+<!--            <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">-->
+<!--              {{ passwordAlert }}-->
+<!--            </div>-->
+
+<!--&lt;!&ndash;            <a routerLink="../workPage">&ndash;&gt;-->
+<!--              <input type="submit" class="button expanded" value="Sign in" [disabled]="!rForm.valid"  (click)="signInNow()" >-->
+<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+
+<!--    <ng-template #forminfo>-->
+<!--      <div class="form-container">-->
+<!--        <div class="row columns">-->
+<!--            <h2>{{ projectName }}</h2>-->
+<!--            <p>{{ userName }}</p>-->
+<!--            <p>{{ userRoles.name }}</p>-->
+<!--            <p>{{ companyName }}</p>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </ng-template>-->
+
+<div class="background">
+  <div class="container col-lg-6">
+    <h1 class="text-center">Sign in</h1>
+    <div class="card">
+      <div class="card-body">
+        <form  #loginForm = "ngForm" (ngSubmit)="signInNow()">
+          <small class="text-danger">{{errorMessage}}</small>
+          <div class="form-group">
+            <label for="username"></label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="User Name*"
+                   name="username"
+                   required #usrname="ngModel" [class.is-invalid]="usrname.invalid && usrname.touched">
+          </div>
+          <small class="text-danger" [class.d-none]="usrname.valid || usrname.untouched">
+            {{usernameAlert}}
+          </small>
+
+          <div class="form-group">
+            <label for="password"></label>
+            <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Password*"
+                   name="password"
+                   required #psword="ngModel" [class.is-invalid]="psword.invalid && psword.touched">
+          </div>
+          <small class="text-danger" [class.d-none]="psword.valid || psword.untouched">
+            {{passwordAlert}}
+          </small>
+          <div>
+            <button [disabled]="loginForm.form.invalid"  type="submit" class="btn btn-success">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

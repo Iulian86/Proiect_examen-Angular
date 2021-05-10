@@ -1,0 +1,59 @@
+<h1 class="text-center">Edit project details</h1>
+<div class="card">
+  <div class="card-body">
+    <form class="form-group">
+      <div class="form-group">
+        <label for="name">Project name :</label>
+        <input type="text" class="form-control"
+               id="name"
+               [value]="project.name"
+               required [(ngModel)]="project.name"
+               placeholder="Enter project name"
+               name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location :</label>
+        <input type="text" class="form-control"
+               id="location"
+               [value]="project.location"
+               required [(ngModel)]="project.location"
+               placeholder="Enter location"
+               name="location">
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">Start date :</label>
+        <input type="text" class="form-control"
+               id="startDate"
+               [value]="project.startDate"
+               required [(ngModel)]="project.startDate"
+               placeholder="Enter startDate"
+               name="startDate">
+      </div>
+
+      <div class="form-group">
+        <label for="finishedDate">Finished date :</label>
+        <input type="text" class="form-control"
+               id="finishedDate"
+               [value]="project.finishedDate"
+               required [(ngModel)]="project.finishedDate"
+               placeholder="Enter finishedDate"
+               name="finishedDate">
+      </div>
+
+      <a mat-stroked-button (click)="close()">
+        <mat-icon>delete_outline</mat-icon>
+        Close
+      </a>
+
+      <a mat-stroked-button (click)="edit()">
+        <mat-icon>delete_outline</mat-icon>
+        Edit project
+      </a>
+
+
+    </form>
+  </div>
+</div>
+

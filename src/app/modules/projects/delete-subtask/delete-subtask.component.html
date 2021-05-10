@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <form class="form-group">
+      <h2>Are you sure you want to delete subtask {{subtask.name}}?</h2>
+      <a mat-stroked-button (click)="close()">
+        <mat-icon>cancel</mat-icon>
+        No
+      </a>
+
+      <a mat-stroked-button (click)="delete()">
+        <mat-icon>delete_outline</mat-icon>
+        Yes
+      </a>
+
+    </form>
+  </div>
+</div>

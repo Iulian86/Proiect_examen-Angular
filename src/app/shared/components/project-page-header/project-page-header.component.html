@@ -1,0 +1,54 @@
+<mat-toolbar  class="header_color" >
+  <div class="spacer"></div>
+
+<!--  <a mat-button *ngFor="let project of projects | async" (click)="openProjectDetails(project.id)">-->
+<!--    <mat-icon>receipt_long</mat-icon>-->
+<!--    PROJECT DETAILS-->
+<!--  </a>-->
+
+
+<!--  <div *ngFor="let proj of projects | async">-->
+<!--    <a  mat-stroked-button (click)="openProjectDetails(proj.id)">-->
+<!--  <div *ngFor="let proj of projects | async">-->
+    <div>
+<!--          <a  mat-stroked-button href="workPage/projects/project-work-pages/project-details/{{projectId}}">-->
+      <a  mat-stroked-button (click)="openProjectDetails()">
+        <mat-icon>receipt_long</mat-icon>
+        PROJECT DETAILS
+      </a>
+    </div>
+
+    <a mat-button [routerLink]="['/workPage/projects/project-work-pages/project-tasks']">
+      <mat-icon>receipt_long</mat-icon>
+      TASKS
+    </a>
+
+    <a mat-button [routerLink]="['/workPage/projects/project-work-pages/raid-log']">
+      <mat-icon>receipt_long</mat-icon>
+      R.A.I.D. LOG
+    </a>
+
+
+
+<!--  <a mat-button [routerLink]="['/workPage/billOfQuantities']">-->
+<!--    <mat-icon>receipt_long</mat-icon>-->
+<!--    BILL OF QUANTITIES-->
+<!--  </a>-->
+<!--  <a mat-button [routerLink]="['/workPage/siteReports']">-->
+<!--    <mat-icon>insert_chart_outlined</mat-icon>-->
+<!--    SITE REPORTS-->
+<!--  </a>-->
+<!--  <a mat-button [routerLink]="['/workPage/generalReports']">-->
+<!--    <mat-icon>stacked_line_chart</mat-icon>-->
+<!--    GENERAL REPORTS-->
+<!--  </a>-->
+<!--  <a mat-button [routerLink]="['/workPage/allocatedResources']">-->
+<!--    <mat-icon>supervised_user_circle</mat-icon>-->
+<!--    ALLOCATED RESOURCES-->
+<!--  </a>-->
+<!--  <a mat-button [routerLink]="['/workPage/timeSchedule']">-->
+<!--    <mat-icon>hourglass_full</mat-icon>-->
+<!--    TIME SCHEDULE-->
+<!--  </a>-->
+
+</mat-toolbar>

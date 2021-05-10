@@ -1,0 +1,43 @@
+<div class="container col-lg-6">
+<!--  <h1 class="text-center">Create project</h1>-->
+
+  <div class="container">
+    <mat-toolbar>
+      <span class="fill-remaining-space"></span>
+      <span>Create project</span>
+      <span class="fill-remaining-space"></span>
+    </mat-toolbar>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <form class="form-group">
+        <div class="form-group">
+          <label for="name"><b>Name</b></label>
+          <input class="form-control" type="text" placeholder="Project name*" name="name" id="name"
+                 required [(ngModel)]="project.name">
+        </div>
+
+        <div class="form-group">
+          <label for="location"><b>Location</b></label>
+          <input class="form-control" type="text" placeholder="Project location*" name="location" id="location"
+                 required [(ngModel)]="project.location">
+        </div>
+
+        <div class="form-group">
+          <label for="startDate"><b>Start date (yyyy-mm-dd)</b></label>
+          <input class="form-control" type="text" placeholder="Start date*" name="startDate" id="startDate"
+                 required [(ngModel)]="project.startDate">
+        </div>
+
+        <div class="form-group">
+          <label for="finishedDate"><b>Final date (yyyy-mm-dd)</b></label>
+          <input class="form-control" type="text" placeholder="Final date*" name="finishedDate" id="finishedDate"
+                 required [(ngModel)]="project.finishedDate">
+        </div>
+
+        <button type="submit" (click)="save()" class="btn btn-success">Save Project</button>
+      </form>
+    </div>
+  </div>
+</div>

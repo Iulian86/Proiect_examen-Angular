@@ -1,0 +1,13 @@
+.spacer{
+    flex: 1 1 auto;
+}
+
+.footer_color{
+    background: transparent/5;
+      background: #cfe6f4;
+      background: linear-gradient(90deg, #d4edfb 0%, #d4edfb 50%, #d4edfb 100%);
+      /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cfe6f4,endColorstr=#f3f8fb);*/
+      zoom: 1;
+      color: #5e5e5e;
+      box-shadow: 5px 5px 8px #5e5e5e;
+}

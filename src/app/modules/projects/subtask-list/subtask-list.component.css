@@ -1,0 +1,9 @@
+.main-container{
+  width:90%;
+  padding: 10px;
+  align: center;
+}
+
+.subtasks-list-card{
+  background: #f6f6f6;
+}

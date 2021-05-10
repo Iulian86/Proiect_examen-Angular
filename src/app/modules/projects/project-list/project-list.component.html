@@ -1,0 +1,135 @@
+<div class="container" fxLayout="column" fxLayoutGap="16px" fxFlex="90%">
+  <div>
+    <mat-card class="projects-list-card">
+      <mat-card-header>
+        <mat-card-title>Projects list</mat-card-title>
+      </mat-card-header>
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%" *ngFor="let project of projects | async">
+          <mat-card>
+            <mat-card-header>
+              <img [src]=project_logo mat-card-avatar>
+              <mat-card-title> Name: {{project.location}}</mat-card-title>
+              <mat-card-subtitle> Location : {{project.name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-md-3">
+                  <div> Start date : {{project.startDate}}</div>
+                </div>
+                <div class="col-md-3">
+                  <div> Final date : {{project.finishedDate}}</div>
+                </div>
+                <div class="col-md-6">
+
+<!--                  TODO: later develop Open Project-->
+
+                  <a mat-stroked-button color="primary" (click)="viewProjectDetails(project.id)">
+                    <mat-icon>launch</mat-icon>
+                    View details
+                  </a>
+
+                  <a mat-stroked-button color="primary" (click)="viewProjectTasks(project.id)">
+                    <mat-icon>view_list</mat-icon>
+                    View tasks
+                  </a>
+
+                  <a mat-stroked-button color="accent" (click)="editProject(project.id)">
+                    <mat-icon>edit</mat-icon>
+                    Edit
+                  </a>
+
+                  <a mat-stroked-button color="warn" (click)="deleteProject(project.id)">
+                    <mat-icon>delete_outline</mat-icon>
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+
+<!--<div class="panel panel-primary">-->
+<!--&lt;!&ndash;  <div class="panel-heading text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2>Projects List</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--  <div class="container">-->
+<!--    <mat-toolbar>-->
+<!--      <span class="fill-remaining-space"></span>-->
+<!--      <span>Projects list</span>-->
+<!--      <span class="fill-remaining-space"></span>-->
+<!--    </mat-toolbar>-->
+<!--  </div>-->
+<!--  <div class="panel-body">-->
+<!--    <table class="table table-hover table-striped table-success">-->
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th>-->
+<!--          Project name-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          Project location-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          Registered on-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          Start date-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          Finish date-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          Actions-->
+<!--        </th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr *ngFor="let project of projects | async">-->
+<!--        <td>{{project.location}}</td>-->
+<!--        <td>{{project.name}}</td>-->
+<!--        <td>{{project.registeredOn}}</td>-->
+<!--        <td>{{project.startDate}}</td>-->
+<!--        <td>{{project.finishedDate}}</td>-->
+<!--        <td>-->
+
+<!--&lt;!&ndash;          TODO: later develop Open Project&ndash;&gt;-->
+<!--&lt;!&ndash;          <a mat-stroked-button (click)="openProject(project.id)">&ndash;&gt;-->
+<!--&lt;!&ndash;            <mat-icon>launch</mat-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;            Open Project&ndash;&gt;-->
+<!--&lt;!&ndash;          </a>&ndash;&gt;-->
+
+<!--          <a mat-stroked-button (click)="viewProjectDetails(project.id)">-->
+<!--            <mat-icon>launch</mat-icon>-->
+<!--            View details-->
+<!--          </a>-->
+
+<!--          <a mat-stroked-button (click)="viewProjectTasks(project.id)">-->
+<!--            <mat-icon>view_list</mat-icon>-->
+<!--            View tasks-->
+<!--          </a>-->
+
+<!--          <a mat-stroked-button (click)="editProject(project.id)">-->
+<!--            <mat-icon>edit</mat-icon>-->
+<!--            Edit-->
+<!--          </a>-->
+
+<!--          <a mat-stroked-button (click)="deleteProject(project.id)">-->
+<!--            <mat-icon>delete_outline</mat-icon>-->
+<!--            Delete-->
+<!--          </a>-->
+
+<!--        </td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
